@@ -1,0 +1,81 @@
+
+
+.screen {
+  height: 798px;
+  width: 1200px;
+  max-height: 100vh;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  opacity: 0;
+}
+.screen.loading {
+  opacity: 1;
+  animation: show-dissolve 0.5s linear forwards
+}
+
+@keyframes show-dissolve {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hotspot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  border: var(--border-width) solid var(--border-color);
+  z-index: 1;
+}
+
+.hotspots {
+  position: absolute;
+  width: 100%;
+  top:0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+}
+.hotspots .marker {
+  border: 2px solid rgba(0, 0, 0, 0.0);
+  position: absolute;
+  cursor: pointer;
+  transition: border-color 0.2s ease 0s;;
+}
+.hotspots .marker.active {
+  border-color: rgba(0, 0, 0, 0.10);
+}
+.hotspots .marker.active {
+  border-color: rgba(0, 0, 0, 0.33);
+}
+.hotspots .marker:hover {
+  border-color: rgba(0, 0, 0, 0.20);
+}
+.hotspots .marker.reveal {
+  animation: show-reveal 0.3s linear forwards;
+}
+
+@keyframes show-reveal {
+  0%, 100% {
+    border-color: rgba(0, 0, 0, 0.0);
+  }
+  50% {
+    border-color: rgba(0, 0, 0, 1);
+  }
+}
+
+
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
