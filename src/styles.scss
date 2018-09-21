@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+$cardinal: #c42333;
+$vivid_burgandy: #a51c30;
+$sweet_brown: #a7333f;
+$prune: #74121d;
+$dark_scarlet: #580c1f;
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+.content-width {
+    width: 80%;
+    display: block;
+    margin:  0 auto;
+    max-width: 1200px;
+}
