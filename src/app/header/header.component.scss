@@ -1,7 +1,7 @@
 @import '../../styles.scss';
-.backdrop {
+.header {
     width: 100%;
-    height: 100vh;
+    height: 72px;
     float: left;
     background-image: url("../../assets/background.jpg");
     background-size:  cover;
@@ -14,11 +14,13 @@
         float: left;
         width: 100%;
         .logo-holder {
-            width: 500px;
-            display: block;
+            height: 54px;
+            display: inline-block;
+            vertical-align: middle;
             margin: 0 auto;
             img {
-                width: 100%;
+                height: 100%;
+                margin-top: 8px;
             }
         }
         flex: 1;
@@ -28,12 +30,14 @@
         flex: initial;
         height: 50vh;
     }
-    .nav-bar { 
+    .nav-bar {
+        display: inline-block;
+        vertical-align: middle;
         list-style:none;
-        width: 100%;
         text-align: right;
-        margin: 0 0 50px 0;
         padding: 0;
+        float: right;
+        margin: 0;
         li {
             display: inline-block;
             line-height: 72px;
@@ -49,32 +53,5 @@
                 color: rgba(#ffffff, 0.80);
             }
         }
-    }
-    .order-button {
-        margin: 60px auto 45px auto;
-        display: block;
-        background: $prune;
-        height: 80px;
-        line-height: 80px;
-        width: 150px;
-        text-align-last: center;
-        color: #ffffff;
-        border-radius: 50px;
-        box-sizing: border-box;
-        font-size: small;
-        letter-spacing: 2px;
-        box-shadow: none;
-        border: none;
-        outline: none;
-        @include focus-states($prune);
-    }
-    .landing-description {
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        font-size: large;
-        font-weight: 300;
-        max-width: 1000px;
-        text-align: justify;
     }
 }

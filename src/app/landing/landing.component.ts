@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent {
   // tslint:disable max-line-length
-  description = 'Cupcake cheesecake cotton candy. Lollipop croissant ice cream gummi bears powder oat cake caramels candy canes sweet roll. Danish sweet jujubes sweet. Chocolate bar sweet candy bear claw croissant. Powder lollipop toffee gummies chocolate sweet bonbon halvah pie. Macaroon tootsie roll cake powder.';
+  description = 'Chocolate bar cupcake chocolate cake gingerbread dessert lemon drops muffin chocolate tootsie roll. Chocolate cake tiramisu tootsie roll pudding lollipop. Pie topping apple pie marzipan sugar plum chocolate cake tootsie roll pudding liquorice. Icing fruitcake chocolate cake toffee sesame snaps sesame snaps ice cream pastry tiramisu. Liquorice jelly candy canes jelly beans pie. Sesame snaps sweet roll oat cake candy fruitcake. Tiramisu ice cream sesame snaps caramels. Liquorice topping icing chocolate bar cotton candy cotton candy jujubes sweet. Candy sugar plum marzipan tootsie roll dessert sugar plum icing. Fruitcake icing tootsie roll marzipan. Tiramisu liquorice pudding ice cream. Powder chupa chups cake. Carrot cake soufflé powder candy canes cake sweet roll. Caramels cake candy cake candy canes.';
 
   constructor() { }
 

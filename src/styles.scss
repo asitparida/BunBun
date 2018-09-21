@@ -15,3 +15,71 @@ body {
     margin:  0 auto;
     max-width: 1200px;
 }
+
+@mixin focus-states($color: null) {
+    @if($color) {
+        &:active, &:hover {
+            background: $color;
+            cursor: pointer;
+        }
+
+        &:active {
+            background: $color;
+            -moz-transform: scale(0.98, 0.98);
+            -ms-transform: scale(0.98, 0.98);
+            -o-transform: scale(0.98, 0.98);
+            -webkit-transform: scale(0.98, 0.98);
+            transform: scale(0.98, 0.98);
+        }
+
+        &.disabled,
+        &[disabled] {
+            opacity: 0.6;
+
+            &:active, &:hover {
+                background: transparent;
+            }
+
+            &:active {
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+    }
+    @else {
+        &:active, &:hover {
+            background: rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        &:active {
+            background: rgba(0,0,0,0.2);
+            -moz-transform: scale(0.98, 0.98);
+            -ms-transform: scale(0.98, 0.98);
+            -o-transform: scale(0.98, 0.98);
+            -webkit-transform: scale(0.98, 0.98);
+            transform: scale(0.98, 0.98);
+        }
+
+        &.disabled,
+        &[disabled] {
+            opacity: 0.6;
+
+            &:active, &:hover {
+                background: transparent;
+                cursor: default;
+            }
+
+            &:active {
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+    }
+}
