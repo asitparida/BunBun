@@ -20,7 +20,7 @@ export class RollListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.selectedItem = this.rolls[1];
+    // this.selectedItem = this.rolls[1];
   }
 
   onRollDetailsClick() {

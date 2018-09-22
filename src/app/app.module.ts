@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { PageContentComponent } from './page-content/page-content.component';
 import { ItemCarouselComponent } from './item-carousel/item-carousel.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     FindUsComponent,
     HeaderComponent,
     PageContentComponent,
-    ItemCarouselComponent
+    ItemCarouselComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

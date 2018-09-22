@@ -1,0 +1,34 @@
+@import '../../styles.scss';
+.footer {
+    width: 100%;
+    height: 48px;
+    float: left;
+    border-top: 1px solid $prune_background;
+    .footer-bar {
+        white-space: nowrap;
+        padding: 0;
+        list-style: none;
+        &.float-left {
+            float: left;
+        }
+        &.float-right {
+            float: right;
+        }
+        li {
+            display: inline-block;
+            margin-left: 45px;
+            line-height: 48px;
+            height: 48px;
+            color: $text_color;
+            font-size: small;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.50;
+        }
+        &:first-child {
+            li {
+                margin-left: 0;
+            }
+        }
+    }
+}
