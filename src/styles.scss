@@ -90,3 +90,26 @@ body {
         }
     }
 }
+button {
+    &.btn-bunbun {
+        outline: $prune;
+        color: $prune;
+        background: transparent;
+        min-width: 100px;
+        padding: 0 10px;
+        line-height: 48px;
+        height: 48px;
+        border: 2px solid $prune;
+        cursor: pointer;
+        &.primary {
+            background: $prune;
+            color: #ffffff;
+        }
+        &[disabled] {
+            opacity: 0.33;
+            background: transparent;
+            color: $prune;
+        }
+        @include focus-states($prune);
+    }
+}

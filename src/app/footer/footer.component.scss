@@ -4,6 +4,7 @@
     height: 48px;
     float: left;
     border-top: 1px solid $prune_background;
+    position: relative;
     .footer-bar {
         white-space: nowrap;
         padding: 0;
@@ -29,6 +30,36 @@
             li {
                 margin-left: 0;
             }
+        }
+    }
+    .cart-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid $prune;
+        color: $prune;
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        opacity: 0.50;
+        background: #fff;
+        i {
+            color: $prune;
+            font-size: x-large;
+        }
+        &:not(.active):hover,
+        &:not(.active)focus,
+        &:not(.active)active {
+            background: $prune;
+            i {
+                color: #ffffff;
+            }
+        }
+        &.active {
+            opacity: 1;
         }
     }
 }
