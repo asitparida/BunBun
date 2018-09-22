@@ -4,6 +4,8 @@ $vivid_burgandy: #a51c30;
 $sweet_brown: #a7333f;
 $prune: #74121d;
 $dark_scarlet: #580c1f;
+$prune_background: lighten($prune, 71);
+$text_color: #565656;
 
 body {
     margin: 0;
@@ -14,6 +16,11 @@ body {
     display: block;
     margin:  0 auto;
     max-width: 1200px;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 @mixin focus-states($color: null) {

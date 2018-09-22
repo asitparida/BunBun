@@ -1,3 +1,42 @@
-<p>
-  roll works!
-</p>
+<div class="roll-details">
+  <div class="details-wrapper">
+    <div class="roll-image-name-box">
+      <div class="img-wrapper">
+        <img [attr.src]="roll?.img" />
+      </div>
+      <label class="item-name">{{roll?.name}}</label>
+    </div>
+    <div class="roll-specifics">
+      <label class="name">Description</label>
+      <p class="description">{{roll?.description}}</p>
+      <div class="margin-separator"></div>
+      <label class="name">Ingredients</label>
+      <p class="description">{{roll?.ingredients}}</p>
+      <div class="margin-separator"></div>
+      <label class="name">Calories</label>
+      <p class="description">{{roll?.calories}}</p>
+      <div class="selection-controls">
+        <div class="glaze-selection selection">
+          <div ngbDropdown placement="top-left" class="d-inline-block" [(open)]="glazeSelectionOpen">
+            <button class="dd-toggle" id="select-glaze" ngbDropdownToggle>
+              <label class="dd-label"><span [hidden]="selectedGlaze">Glaze</span> <span class="value" [hidden]="!selectedGlaze">{{selectedGlaze?.key}}</span> <i class="material-icons" [hidden]="!glazeSelectionOpen">keyboard_arrow_up</i> <i class="material-icons" [hidden]="glazeSelectionOpen">keyboard_arrow_down</i></label>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="select-glaze" class="dd-menu">
+              <button class="dropdown-item dd-item" *ngFor="let option of glazeOptions" (click)="selectedGlaze = option">{{option.key}}</button>
+            </div>
+          </div>
+        </div>
+        <div class="units-selection selection">
+           <div ngbDropdown placement="top-left" class="d-inline-block" [(open)]="unitSelectionOpen">
+            <button class=" dd-toggle" id="select-uits" ngbDropdownToggle>
+              <label class="dd-label"><span [hidden]="selectedUnits">Units</span> <span class="value" [hidden]="!selectedUnits">{{selectedUnits?.key}}</span> <i class="material-icons" [hidden]="!unitSelectionOpen">keyboard_arrow_up</i> <i class="material-icons" [hidden]="unitSelectionOpen">keyboard_arrow_down</i></label>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="select-uits" class="dd-menu">
+              <button class="dropdown-item dd-item" *ngFor="let option of unitOptions" (click)="selectedUnits = option">{{option.key}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

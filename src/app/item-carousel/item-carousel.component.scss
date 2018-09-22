@@ -1,0 +1,69 @@
+@import '../../styles.scss';
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .carousel-control {
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: rgba($prune, 1);
+            i {
+                color: #fff;
+            }
+        }
+        cursor: pointer;
+    }
+    .item-close-control {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 36px;
+        text-align: center;
+        height: 36px;
+        i {
+            color: $text_color;
+            font-size: medium;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+        }
+    }
+    .item-left-control,
+    .item-right-control {
+        position: absolute;
+        top: 50%;
+        background-color: rgba($prune,0.05);
+        width: 36px;
+        text-align: center;
+        margin-top: -30px; 
+        height: 60px;
+        cursor: pointer;
+        transition: background-color 0.2s linear 0s;
+        i {
+            color: $text_color;
+            font-size: x-large;
+            height: 60px;
+            line-height: 60px;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s linear 0s;
+        }
+    }
+    .item-left-control {
+        left: 0;
+    }
+    .item-right-control {
+        right: 0;
+    }
+    .item-details-wrapper {
+        width: 100%;
+        padding: 0 60px;
+        height: 100%;
+    }
+    .item-details {
+        width: 100%;
+        height: 100%;
+    }
+}

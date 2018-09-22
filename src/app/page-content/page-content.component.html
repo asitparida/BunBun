@@ -2,7 +2,9 @@
   <app-header></app-header>
   <div class="page-content-inner">
     <div class="content-width">
-        <ng-content></ng-content>
+      <div class="content-area" [class.showBgColor]="showBgColor">
+          <ng-content></ng-content>
+      </div>
     </div>
   </div>
 </div>

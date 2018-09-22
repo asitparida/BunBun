@@ -1,3 +1,24 @@
-<p>
-  roll-list works!
-</p>
+<app-page-content [showBgColor]="false">
+  <div class="page-wrapper">
+    <div class="list-content">
+      <div class="list-content-wrapper">
+        <div class="list-item" *ngFor="let item of rolls; let i = index">
+          <div class="item-wrapper" tabindex="0" (click)="loadSelectedItem(i)">
+            <div class="img-wrapper">
+              <img [attr.src]="item.img" />
+            </div>
+            <label class="item-name">{{item.name}}</label>
+            <div class="overlay">
+              <label class="overlay-label">Choose this roll</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-details" [hidden]="!selectedItem">
+      <app-item-carousel (closeClick)="onRollDetailsClick()" (nextItem)="onNextItem()" (previousItem)="onPreviousItem()">
+        <app-roll [roll]="selectedItem"></app-roll>
+      </app-item-carousel>
+    </div>
+  </div>
+</app-page-content>

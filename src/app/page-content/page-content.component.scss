@@ -1,9 +1,21 @@
+@import '../../styles.scss';
 .page-content {
     width: 100%;
     height: 100vh;
+    overflow: hidden;
     .page-content-inner {
         width: 100%;
         float: left;
         height: calc(100% - 60px);
+        padding: 60px 0;
+        box-sizing: border-box;
+        .content-area {
+            width: 100%;
+            height: 100%;
+            display: block;
+            &.showBgColor {
+                background: $prune_background;
+            }
+        }
     }
 }
