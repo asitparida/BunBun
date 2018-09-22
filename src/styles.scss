@@ -96,11 +96,13 @@ button {
         color: $prune;
         background: transparent;
         min-width: 100px;
-        padding: 0 10px;
+        padding: 0 15px;
         line-height: 48px;
         height: 48px;
         border: 2px solid $prune;
         cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         &.primary {
             background: $prune;
             color: #ffffff;
@@ -112,4 +114,11 @@ button {
         }
         @include focus-states($prune);
     }
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
 }

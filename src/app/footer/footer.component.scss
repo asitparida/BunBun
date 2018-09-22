@@ -9,12 +9,6 @@
         white-space: nowrap;
         padding: 0;
         list-style: none;
-        &.float-left {
-            float: left;
-        }
-        &.float-right {
-            float: right;
-        }
         li {
             display: inline-block;
             margin-left: 45px;
