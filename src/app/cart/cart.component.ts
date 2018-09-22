@@ -21,4 +21,8 @@ export class CartComponent implements OnInit {
   closeCart() {
     this.router.navigate(['/list']);
   }
+  completeCheckout() {
+    this.router.navigate(['/list']);
+    console.log('chekcout');
+  }
 }

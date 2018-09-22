@@ -109,8 +109,13 @@ button {
         }
         &[disabled] {
             opacity: 0.33;
-            background: transparent;
-            color: $prune;
+            background: transparent; 
+        }
+        &:not([disabled]):hover,
+        &:not([disabled]):focus
+        &:not([disabled]):active {
+            background: $prune;
+            color: #fff;
         }
         @include focus-states($prune);
     }
@@ -121,4 +126,7 @@ button {
 }
 .float-right {
     float: right;
+}
+.color-prune {
+    color: $prune !important;
 }

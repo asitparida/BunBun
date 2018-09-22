@@ -1,0 +1,34 @@
+<h1>Choose Delivery Details</h1>
+<form>
+  <div class="radio-group main">
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="deliveryType" id="store-pick-up" value="store-pick-up" checked>
+      <label class="form-check-label" for="store-pick-up">Store Pick Up</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="deliveryType" id="home-delivery" value="home-delivery">
+      <label class="form-check-label" for="home-delivery">Local Delivery</label>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</form>
+<div class="address-box">
+  <div class="address-store">
+    <label>Store Address</label>
+    <p class="description">4500 Centre Avenue</p>
+    <p class="description">Unit 12345</p>
+    <p class="description">Pittsburgh, PA 15213</p>
+  </div>
+  <div class="address-input">
+    <label>Enter Address</label>
+    <form>
+      <input placeholder="Address line 1" type="text" />
+      <input placeholder="Address line 2" type="text" />
+      <div class="input-inline">
+          <input class="city" placeholder="City" type="text" />
+          <input class="pin" placeholder="PIN" type="number" />
+      </div>
+    </form>
+  </div>
+  <div class="clearfix"></div>
+</div>

@@ -13,6 +13,9 @@ import { PageContentComponent } from './page-content/page-content.component';
 import { ItemCarouselComponent } from './item-carousel/item-carousel.component';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
+import { PaymentComponent } from './cart/payment/payment.component';
+import { AddressComponent } from './cart/address/address.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     PageContentComponent,
     ItemCarouselComponent,
-    FooterComponent
+    FooterComponent,
+    CheckoutComponent,
+    PaymentComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
