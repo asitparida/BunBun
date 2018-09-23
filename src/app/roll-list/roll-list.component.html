@@ -1,0 +1,36 @@
+<app-page-content [showBgColor]="false">
+  <div class="page-wrapper">
+    <div class="list-content">
+      <div class="list-content-wrapper">
+        <div class="list-item" *ngFor="let item of rolls; let i = index">
+          <div class="item-wrapper" tabindex="0" (click)="loadSelectedItem(i)">
+            <div class="img-wrapper">
+              <img [attr.src]="item.img" />
+            </div>
+            <label class="item-name">{{item.name}}</label>
+            <div class="overlay">
+              <label class="overlay-label">Choose this roll</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-details" [hidden]="!selectedItem" [class.showCarousel]="selectedItem" [class.hideCarousel]="hideCarousel">
+      <app-item-carousel (closeClick)="onRollDetailsClick()" (nextItem)="onNextItem()" (previousItem)="onPreviousItem()">
+        <app-roll [roll]="selectedItem"></app-roll>
+      </app-item-carousel>
+    </div>
+  </div>
+  <div class="order-confirmation" *ngIf="showConfirmation">
+    <div class="order-confirmation-wrapper" [class.fade-in]="showConfirmation">
+      <div class="order-message">
+        <div class="order-icon">
+            <i class="material-icons">done</i>
+        </div>
+        <p>Order <strong>#12345</strong> is confirmed.</p>
+        <p>Your order would be ready for pick-up from store in 6-8 minutes.</p>
+        <button class="btn-bunbun" [routerLink]="['/home']">DONE</button>
+      </div>
+    </div>
+  </div>
+</app-page-content>

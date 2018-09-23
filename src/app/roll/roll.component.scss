@@ -1,0 +1,157 @@
+@import '../../styles.scss';
+.roll-details {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding:  45px 0;
+    align-items: center;
+    &.slide-left {
+        animation: slide-left 0.3s ease-out 0s forwards;
+    }
+    &.slide-right {
+        animation: slide-right 0.3s ease-out 0s forwards;
+    }
+    .details-wrapper {
+        width: 100%;
+        display: block;
+        display: flex;
+        flex-direction: row;
+        .roll-image-name-box {
+            width: 500px;
+            flex: initial;
+            height: 400px;
+            .img-wrapper {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: 80%;
+                  max-width: 240px;
+                }
+                flex: 1;
+              }
+        
+              label.item-name {
+                height: 60px;
+                flex: initial;
+                width: 100%;
+                text-align: center;
+                font-weight: 300;
+                font-size: xx-large;
+                padding: 0;
+                margin: 0;
+                display: block;
+                color: $text_color;
+              }
+        }
+        .roll-specifics {
+            flex: 1;
+            padding: 0 60px;
+            color: $text_color;
+            .name {
+                font-weight: 500;
+                font-size: medium;
+                padding: 0;
+                margin: 0 0 5px 0;
+                display: block;
+            }
+            .description {
+                font-weight: 300;
+                font-size: x-large;
+                margin: 0;
+                padding: 0;
+                display: block;
+                line-height: normal;
+            }
+            .margin-separator {
+                margin-bottom: 30px; 
+            }
+            .selection-controls {
+                width:100%;
+                .selection {
+                    display: inline-block;
+                    margin-top: 30px;
+                }
+                .glaze-selection {
+                    width: 60%;
+                    float: left;
+                    margin-right: 24px;
+                }
+                .units-selection {
+                    width: calc(40% - 30px);
+                    float: right;
+                }
+                .dd-toggle {
+                    width: 100%;
+                    text-align: left;
+                    position: relative;
+                    border: none;
+                    border-bottom: 1px solid $prune;
+                    color: $prune;
+                    padding: 0;
+                    background: transparent;
+                    outline: none;
+                    cursor: pointer;
+                    .dd-label {
+                        display: inline-block;
+                        height: 48px;
+                        line-height: 48px;
+                        font-weight: 300;
+                        font-size: large;
+                        margin: 0;
+                        .value {
+                            font-size: large;    
+                        }
+                    }
+                    i {
+                        top: 0;
+                        right: 0;
+                        position: absolute;
+                        height: 48px;
+                        line-height: 48px;
+                        display: inline-block;
+                    }
+                }
+                /deep/ .dropup {
+                    width: 100%;
+                     .dropdown-toggle::after {
+                         display: none;
+                     }
+                }
+                .dd-menu {
+                    background: #ffffFf;
+                    border-radius: 0;
+                    padding: 0;
+                    min-width: 100%;
+                    .dd-item {
+                        height: 60px;
+                        line-height: 60px;
+                        outline: none;
+                        color: $text_color;
+                        padding: 0 1.5rem;
+                        font-weight: 300;
+                        font-size: large;
+                        cursor: pointer;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: $prune;
+                        }
+                        &:active {
+                            background: $prune;
+                            color: #fff;
+                        }
+                        &:not(:last-child) {
+                            border-bottom: 2px solid $prune_background;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.btn-bunbun {
+    margin: 30px 0 0 0;
+}

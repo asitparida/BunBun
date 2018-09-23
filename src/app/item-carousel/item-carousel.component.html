@@ -1,0 +1,18 @@
+<div class="carousel-wrap">
+  <div class="carousel">
+    <div class="item-close-control carousel-control" (click)="onCloseClick()">
+      <i class="material-icons">close</i>
+    </div>
+    <div class="item-left-control carousel-control" (click)="onCycleNextItem(-1)">
+      <i class="material-icons">chevron_left</i>
+    </div>
+    <div class="item-details-wrapper">
+      <div class="item-details">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div class="item-right-control carousel-control" (click)="onCycleNextItem(1)">
+      <i class="material-icons">chevron_right</i>
+    </div>
+  </div>
+</div>

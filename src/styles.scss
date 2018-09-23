@@ -1,0 +1,200 @@
+/* You can add global styles to this file, and also import other style files */
+$cardinal: #c42333;
+$vivid_burgandy: #a51c30;
+$sweet_brown: #a7333f;
+$prune: #74121d;
+$dark_scarlet: #580c1f;
+$prune_background: lighten($prune, 71);
+$text_color: #565656;
+
+body {
+    margin: 0;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+.content-width {
+    width: 80%;
+    display: block;
+    margin:  0 auto;
+    max-width: 1200px;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@mixin focus-states($color: null) {
+    @if($color) {
+        &:active, &:hover {
+            background: $color;
+            cursor: pointer;
+        }
+
+        &:active {
+            background: $color;
+            -moz-transform: scale(0.98, 0.98);
+            -ms-transform: scale(0.98, 0.98);
+            -o-transform: scale(0.98, 0.98);
+            -webkit-transform: scale(0.98, 0.98);
+            transform: scale(0.98, 0.98);
+        }
+
+        &.disabled,
+        &[disabled],
+        &[like-disabled="true"] {
+            opacity: 0.6;
+
+            &:active, &:hover {
+                background: transparent;
+            }
+
+            &:active {
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+    }
+    @else {
+        &:active, &:hover {
+            background: rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        &:active {
+            background: rgba(0,0,0,0.2);
+            -moz-transform: scale(0.98, 0.98);
+            -ms-transform: scale(0.98, 0.98);
+            -o-transform: scale(0.98, 0.98);
+            -webkit-transform: scale(0.98, 0.98);
+            transform: scale(0.98, 0.98);
+        }
+
+        &.disabled,
+        &[disabled],
+        &[like-disabled="true"] {
+            opacity: 0.6;
+
+            &:active, &:hover {
+                background: transparent;
+                cursor: default;
+            }
+
+            &:active {
+                -moz-transform: none;
+                -ms-transform: none;
+                -o-transform: none;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+    }
+}
+button {
+    &.btn-bunbun {
+        outline: $prune;
+        color: $prune;
+        background: transparent;
+        color: $prune;
+        min-width: 100px;
+        padding: 0 15px;
+        line-height: 48px;
+        height: 48px;
+        border: 2px solid $prune;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &.primary {
+            background: $prune;
+            color: #ffffff;
+            &[disabled] {
+                background: transparent;
+                color: $prune;
+                cursor: not-allowed;
+            }
+        }
+        &[disabled] {
+            opacity: 0.15;
+            cursor: not-allowed;
+        }
+        &:not([disabled]):hover,
+        &:not([disabled]):focus
+        &:not([disabled]):active {
+            background: $prune;
+            color: #fff;
+        }
+        @include focus-states($prune);
+    }
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.color-prune {
+    color: $prune !important;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.95, 0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes cart-animation {
+    0% {
+        transform: scale(0.95, 0.95);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes fade-box-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.95, 0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
