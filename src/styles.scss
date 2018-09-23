@@ -40,7 +40,8 @@ body {
         }
 
         &.disabled,
-        &[disabled] {
+        &[disabled],
+        &[like-disabled="true"] {
             opacity: 0.6;
 
             &:active, &:hover {
@@ -72,7 +73,8 @@ body {
         }
 
         &.disabled,
-        &[disabled] {
+        &[disabled],
+        &[like-disabled="true"] {
             opacity: 0.6;
 
             &:active, &:hover {
