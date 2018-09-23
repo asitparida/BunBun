@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject, Subject } from 'rxjs';
 import { BunBunRoll } from './roll.model';
+import { StorageService } from './storage.service';
 
 @Injectable()
 export class DataService {
@@ -13,6 +14,13 @@ export class DataService {
     currentCartItems$ = this.currentCartItems.asObservable();
     itemDetailsSlideDirection = new Subject<boolean>();
     itemDetailsSlideDirection$ = this.itemDetailsSlideDirection.asObservable();
+    constructor(private storageService: StorageService) {
+        const localCart = this.storageService.getCartStorage();
+        if (localCart) {
+            this.cartItems = localCart;
+            this.currentCartItems.next(this.cartItems);
+        }
+    }
     addItemToCart(item: BunBunRoll) {
         const temp = this.cartItems.find(x => x.name === item.name && x.glaze === item.glaze);
         if (temp) {
@@ -24,14 +32,18 @@ export class DataService {
         } else {
             this.cartItems.push(item);
         }
-        this.currentCartItems.next(this.cartItems);
+        this.updateCart();
     }
     removeCartItem(index: number) {
         this.cartItems.splice(index, 1);
-        this.currentCartItems.next(this.cartItems);
+        this.updateCart();
     }
     completeCheckout() {
         this.cartItems = [];
+        this.updateCart();
+    }
+    updateCart() {
         this.currentCartItems.next(this.cartItems);
+        this.storageService.saveCart(this.cartItems);
     }
 }

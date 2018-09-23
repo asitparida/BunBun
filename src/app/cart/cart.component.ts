@@ -11,9 +11,11 @@ import { DataService } from '../data.service';
 export class CartComponent implements OnInit {
   cartSteps = [1, 2, 3];
   activeStep = 1;
+  slideDirectionIsLeft = true;
   constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.itemDetailsSlideDirection$.subscribe(data => this.slideDirectionIsLeft = data);
   }
   closeCart() {
     this.router.navigate(['/list']);
@@ -22,5 +24,13 @@ export class CartComponent implements OnInit {
     this.dataService.completeCheckout();
     this.dataService.orderConfirmationAvailable.next(true);
     this.router.navigate(['/list']);
+  }
+  nextStep(index) {
+    if (index > this.activeStep) {
+      this.dataService.itemDetailsSlideDirection.next(true);
+    } else {
+      this.dataService.itemDetailsSlideDirection.next(false);
+    }
+    this.activeStep = index;
   }
 }
