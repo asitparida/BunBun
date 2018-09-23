@@ -1,6 +1,7 @@
-# BunBunPrototype
+# Bun Bun Prototype
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+#### Web Prototype (HTML5, CSS, Angular5 ) : https://bun-bun.azurewebsites.net
+#### Web Prototype (ClickThrough) : https://asitparida.github.io/BunBun/
 
 ## Development server
 
