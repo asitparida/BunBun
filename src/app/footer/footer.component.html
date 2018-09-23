@@ -8,10 +8,8 @@
       <li>FAQs</li>
       <li>Contact Us</li>
     </ul>
-    <div class="cart-icon">
-        <i class="material-icons">
-            shopping_cart
-            </i>
+    <div class="cart-icon" *ngIf="showCart" [class.active]="cartItems.length > 0" (click)="openCart()" [class.item-added]="itemAdded">
+        <i class="material-icons">shopping_cart</i>
     </div>
   </div>
 </div>

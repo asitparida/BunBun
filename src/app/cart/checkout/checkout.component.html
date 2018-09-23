@@ -1,7 +1,7 @@
   
 <h1>Cart</h1>
 <div class="item-list">
-  <div class="cart-item" *ngFor="let item of cartItems">
+  <div class="cart-item" *ngFor="let item of cartItems; let i = index;">
     <div class="cart-item-wrapper">
       <div class="img-wrapper">
         <img [attr.src]="item.img" />
@@ -10,13 +10,13 @@
         <div class="item-details-specifics">
           <label class="float-left roll-names">
             <span class="roll-name">{{item.name}}</span>
-            <span class="glaze-name">{{item.glaze}}</span>
+            <span class="glaze-name">{{item.glazeLabel}}</span>
           </label>
-          <label class="float-right roll-price"> 1.05 x 3</label>
+          <label class="float-right roll-price"> {{item.price}} x {{item.unitsLabel}}</label>
         </div>
         <div class="item-details-quantity">
-          <button class="item-remove-btn">Remove</button>
-          <label class="float-right roll-total-price">$ 3.15</label>
+          <button class="item-remove-btn" (click)="removeItem(i)">Remove</button>
+          <label class="float-right roll-total-price">$ {{item.total}}</label>
         </div>
       </div>
     </div>
@@ -26,19 +26,19 @@
   <div class="price-item-group">
     <div class="wrapper">
       <label class="key">Net</label>
-      <label class="value">6.30</label>
+      <label class="value">{{net}}</label>
     </div>
   </div>
   <div class="price-item-group">
     <div class="wrapper">
       <label class="key">Tax (7 %)</label>
-      <label class="value">0.44</label>
+      <label class="value">{{tax}}</label>
     </div>
   </div>
   <div class="price-item-group final">
     <div class="wrapper">
       <label class="key">Total</label>
-      <label class="value">$ 6.74</label>
+      <label class="value">$ {{total}}</label>
     </div>
   </div>
   <div class="clearfix"></div>

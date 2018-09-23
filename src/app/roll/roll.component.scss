@@ -4,6 +4,12 @@
     height: 100%;
     display: block;
     padding:  45px 0;
+    &.slide-left {
+        animation: slide-left 0.3s ease-out 0s forwards;
+    }
+    &.slide-right {
+        animation: slide-right 0.3s ease-out 0s forwards;
+    }
     .details-wrapper {
         width: 100%;
         display: block;

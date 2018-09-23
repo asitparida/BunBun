@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { PaymentComponent } from './cart/payment/payment.component';
 import { AddressComponent } from './cart/address/address.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { AddressComponent } from './cart/address/address.component';
     AppRoutingModule,
     NgbDropdownModule
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

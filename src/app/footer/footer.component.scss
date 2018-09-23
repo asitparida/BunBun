@@ -55,5 +55,9 @@
         &.active {
             opacity: 1;
         }
+        @include focus-states();
+        &.item-added {
+            animation: cart-animation 0.3s linear 0s forwards;
+        }
     }
 }

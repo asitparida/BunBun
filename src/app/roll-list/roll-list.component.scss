@@ -113,5 +113,62 @@
 			/deep/ .carousel {
 				background-color: $prune_background;
 			}
+			opacity: 0;
+			&.showCarousel {
+				opacity: 1;
+				animation: fade-in 0.3s ease-out 0s forwards;
+			}
+			&.hideCarousel {
+				animation: fade-out 0.3s ease-out 0s forwards;
+			}
 	  }
+}
+.order-confirmation {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba($prune, 0.50);
+	.order-confirmation-wrapper {
+		padding: 30px;
+		background: #ffffff;
+		&.fade-in {
+			animation: fade-box-in 0.3s linear 0s forwards;
+		}
+		.order-message {
+			padding: 30px;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.order-icon {
+				width: 72px;
+				height: 72px;
+				background: $prune;
+				border-radius: 50%;
+				i {
+					color: #ffffff;
+					height: 72px;
+					line-height: 72px;
+					font-size: 30px;
+				}
+				margin-bottom: 30px;
+			}
+			p {
+				font-size: x-large;
+				font-weight: 300;
+				max-width: 500px;
+				margin: 0;
+			}
+			button {
+				margin-top: 30px;
+				min-width: 100px;
+			}
+		}
+	}
 }

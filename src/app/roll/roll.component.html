@@ -1,4 +1,4 @@
-<div class="roll-details">
+<div class="roll-details" [hidden]="!showRoll" [class.slide-left]="showRoll && slideDirectionIsLeft" [class.slide-right]="showRoll && !slideDirectionIsLeft">
   <div class="details-wrapper">
     <div class="roll-image-name-box">
       <div class="img-wrapper">
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <button class="btn-bunbun primary" [disabled]="!(selectedGlaze && selectedUnits)"> Add Roll</button>
+      <button class="btn-bunbun primary" [disabled]="!(selectedGlaze && selectedUnits)" (click)="addRoll()"> Add Roll</button>
     </div>
   </div>
 </div>
