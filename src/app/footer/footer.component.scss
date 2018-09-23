@@ -1,63 +1,88 @@
 @import '../../styles.scss';
+
 .footer {
-    width: 100%;
+  width: 100%;
+  height: 48px;
+  float: left;
+  border-top: 1px solid $prune_background;
+  position: relative;
+
+  .footer-bar {
+    white-space: nowrap;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-left: 45px;
+      line-height: 48px;
+      height: 48px;
+      color: $text_color;
+      font-size: small;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.50;
+    }
+
+    &:first-child {
+      li {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .cart-icon {
+    width: 48px;
     height: 48px;
-    float: left;
-    border-top: 1px solid $prune_background;
-    position: relative;
-    .footer-bar {
-        white-space: nowrap;
-        padding: 0;
-        list-style: none;
-        li {
-            display: inline-block;
-            margin-left: 45px;
-            line-height: 48px;
-            height: 48px;
-            color: $text_color;
-            font-size: small;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.50;
-        }
-        &:first-child {
-            li {
-                margin-left: 0;
-            }
-        }
+    border-radius: 50%;
+    border: 2px solid $prune;
+    color: $prune;
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    opacity: 0.50;
+    background: #fff;
+
+    i {
+      color: $prune;
+      font-size: x-large;
     }
-    .cart-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        border: 2px solid $prune;
-        color: $prune;
-        position: absolute;
-        top: -24px;
-        left: 50%;
-        text-align: center;
-        line-height: 60px;
-        cursor: pointer;
-        opacity: 0.50;
-        background: #fff;
-        i {
-            color: $prune;
-            font-size: x-large;
-        }
-        &:not(.active):hover,
-        &:not(.active)focus,
-        &:not(.active)active {
-            background: $prune;
-            i {
-                color: #ffffff;
-            }
-        }
-        &.active {
-            opacity: 1;
-        }
-        @include focus-states();
-        &.item-added {
-            animation: cart-animation 0.3s linear 0s forwards;
-        }
+
+    &:not(.active):hover,
+    &:not(.active)focus,
+    &:not(.active)active {
+      background: $prune;
+
+      i {
+        color: #ffffff;
+      }
     }
+
+    &.active {
+      opacity: 1;
+    }
+
+    @include focus-states();
+
+    &.item-added {
+      animation: cart-animation 0.3s linear 0s forwards;
+    }
+
+    .badge {
+      background: $prune;
+      color: #ffffff;
+      position: absolute;
+      font-weight: 400;
+      font-size: x-small;
+      top: -24px;
+      left: 50%;
+      border-radius: 50%;
+      margin-top: 15px;
+      margin-left: 5px;
+      padding: 6px;
+    }
+  }
 }

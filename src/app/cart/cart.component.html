@@ -4,23 +4,23 @@
       <i class="material-icons">close</i>
     </div>
     <div class="cart-container">
-      <app-checkout class="w-h-100" *ngIf="activeStep === 1"></app-checkout>
-      <app-address class="w-h-100" *ngIf="activeStep === 2"></app-address>
-      <app-payment class="w-h-100" *ngIf="activeStep === 3"></app-payment>
+      <app-checkout class="w-h-100" *ngIf="activeStep === 1" [class.slide-left]="slideDirectionIsLeft" [class.slide-right]="!slideDirectionIsLeft"></app-checkout>
+      <app-address class="w-h-100" *ngIf="activeStep === 2" [class.slide-left]="slideDirectionIsLeft" [class.slide-right]="!slideDirectionIsLeft"></app-address>
+      <app-payment class="w-h-100" *ngIf="activeStep === 3" [class.slide-left]="slideDirectionIsLeft" [class.slide-right]="!slideDirectionIsLeft"></app-payment>
     </div>
     <div class="cart-footer">
       <ng-container *ngIf="activeStep === 1">
-        <button class="btn-bunbun float-left" [routerLink]="['/list']" > BUY MORE</button>
-        <button class="btn-bunbun float-right" (click)="activeStep = 2" > CONTINUE</button>
+        <button class="btn-bunbun float-left" [routerLink]="['/list']"> BUY MORE</button>
+        <button class="btn-bunbun float-right" (click)="nextStep(2)"> CONTINUE</button>
       </ng-container>
       <ng-container *ngIf="activeStep === 2">
-          <button class="btn-bunbun float-left" (click)="activeStep = 1" > BACK</button>
-          <button class="btn-bunbun float-right" (click)="activeStep = 3" > CONTINUE</button>
-        </ng-container>
-        <ng-container *ngIf="activeStep === 3">
-            <button class="btn-bunbun float-left" (click)="activeStep = 2" > BACK</button>
-            <button class="btn-bunbun float-right" (click)="completeCheckout()" > COMPLETE</button>
-          </ng-container>
+        <button class="btn-bunbun float-left" (click)="nextStep(1)"> BACK</button>
+        <button class="btn-bunbun float-right" (click)="nextStep(3)"> CONTINUE</button>
+      </ng-container>
+      <ng-container *ngIf="activeStep === 3">
+        <button class="btn-bunbun float-left" (click)="nextStep(2)"> BACK</button>
+        <button class="btn-bunbun float-right" (click)="completeCheckout()"> COMPLETE</button>
+      </ng-container>
       <ul class="cart-step-markers">
         <li *ngFor="let step of cartSteps" [class.active]="activeStep >= step"></li>
       </ul>

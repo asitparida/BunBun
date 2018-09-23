@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  showCart = false;
+  showCart = true;
   cartItems = [];
   lastLen = 0;
   itemAdded = false;

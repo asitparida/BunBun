@@ -1,5 +1,12 @@
 @import '../../styles.scss';
 
+.slide-left {
+    animation: slide-left 0.3s ease-out 0s forwards;
+}
+.slide-right {
+    animation: slide-right 0.3s ease-out 0s forwards;
+}
+
 .cart-content {
   padding: 45px 45px 30px 45px;
   position: relative;

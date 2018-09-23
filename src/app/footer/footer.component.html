@@ -10,6 +10,7 @@
     </ul>
     <div class="cart-icon" *ngIf="showCart" [class.active]="cartItems.length > 0" (click)="openCart()" [class.item-added]="itemAdded">
         <i class="material-icons">shopping_cart</i>
+        <span class="badge" [hidden]="cartItems.length == 0">{{cartItems.length | number: '2.0-0'}}</span>
     </div>
   </div>
 </div>
