@@ -49,5 +49,6 @@ export class RollComponent implements OnInit, AfterViewInit, OnChanges {
     }));
     this.selectedGlaze = null;
     this.selectedUnits = null;
+    this.dataService.playAudio();
   }
 }
