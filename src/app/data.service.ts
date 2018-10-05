@@ -20,7 +20,7 @@ export class DataService {
     audioPlay$ = this.audioPlay.asObservable();
     constructor(private storageService: StorageService) {
         const localCart = this.storageService.getCartStorage();
-        if (localCart) {
+        if (localCart && localCart.length > 0) {
             this.cartItems = localCart;
             this.currentCartItems.next(this.cartItems);
             this.loadedFromStorage.next(true);

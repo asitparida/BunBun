@@ -198,3 +198,10 @@ button {
         transform: scale(1, 1);
     }
 }
+img {
+    opacity: 0 !important;
+    &.show {
+        opacity: 1 !important;
+        transition: opacity 0.2s linear 0s;
+    }
+}

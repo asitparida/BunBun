@@ -23,6 +23,11 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
   ngAfterViewInit() {
     this.canPlayAudio = true;
+    document.addEventListener('load', function(e) {
+      if ((e.target as HTMLElement).tagName === 'IMG') {
+        (e.target as HTMLElement).classList.add('show');
+      }
+    }, true);
   }
   playAudio() {
     this.audioEl.play();

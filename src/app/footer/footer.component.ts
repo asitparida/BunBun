@@ -27,7 +27,6 @@ export class FooterComponent implements OnInit {
       this.lastLen = this.cartItems.length;
     });
     this.dataService.loadedFromStorage$.subscribe((play) => {
-      console.log(play);
       if (play) {
         setTimeout(() => {
           this.dataService.playAudio();
