@@ -1,5 +1,6 @@
 <app-page-content [showBgColor]="false">
   <div class="page-wrapper">
+    <label class="list-title">Choose a Cinnamon Roll</label>
     <div class="list-content">
       <div class="list-content-wrapper">
         <div class="list-item" *ngFor="let item of rolls; let i = index">
@@ -9,7 +10,7 @@
             </div>
             <label class="item-name">{{item.name}}</label>
             <div class="overlay">
-              <label class="overlay-label">Choose this roll</label>
+              <label class="overlay-label">Choose <strong>{{item.name}}</strong></label>
             </div>
           </div>
         </div>

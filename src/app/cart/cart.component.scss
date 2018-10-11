@@ -84,14 +84,14 @@
 
             .roll-name {
               display: block;
-              font-weight: 500;
-              font-size: small;
+              font-weight: 300;
+              font-size: large;
             }
 
             .glaze-name {
               display: block;
               font-weight: 300;
-              font-size: small;
+              font-size: medium;
             }
           }
 
@@ -104,10 +104,9 @@
             border: none;
             box-shadow: none;
             text-transform: uppercase;
-            font-size: x-small;
+            font-size: small;
             position: relative;
             cursor: pointer;
-            @include focus-states();
           }
 
           .roll-price,

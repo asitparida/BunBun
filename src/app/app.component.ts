@@ -25,7 +25,9 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.canPlayAudio = true;
     document.addEventListener('load', function(e) {
       if ((e.target as HTMLElement).tagName === 'IMG') {
-        (e.target as HTMLElement).classList.add('show');
+        if ((e.target as HTMLElement).classList.contains('hidden-img') === false) {
+          (e.target as HTMLElement).classList.add('show');
+        }
       }
     }, true);
   }

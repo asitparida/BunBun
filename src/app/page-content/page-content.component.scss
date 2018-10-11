@@ -8,6 +8,9 @@
         float: left;
         height: calc(100% - 120px);
         padding: 45px 0;
+        &.noFooter {
+            height: calc(100% - 75px);
+        }
         box-sizing: border-box;
         .content-area {
             width: 100%;

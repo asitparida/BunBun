@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
@@ -12,28 +12,31 @@ export class FooterComponent implements OnInit {
   cartItems = [];
   lastLen = 0;
   itemAdded = false;
+  @Input() noCartInFooter = false;
   constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.showCartOption$.subscribe(data => this.showCart = data);
-    this.dataService.currentCartItems$.subscribe(data => {
-      this.cartItems = data;
-      if (this.cartItems.length !== this.lastLen) {
-        this.itemAdded = true;
-        setTimeout(() => {
-          this.itemAdded = false;
-        }, 300);
-      }
-      this.lastLen = this.cartItems.length;
-    });
-    this.dataService.loadedFromStorage$.subscribe((play) => {
-      if (play) {
-        setTimeout(() => {
-          this.dataService.playAudio();
-          this.dataService.loadedFromStorage.next(false);
-        });
-      }
-    });
+    if (!this.noCartInFooter) {
+      this.dataService.showCartOption$.subscribe(data => this.showCart = data);
+      this.dataService.currentCartItems$.subscribe(data => {
+        this.cartItems = data;
+        if (this.cartItems.length !== this.lastLen) {
+          this.itemAdded = true;
+          setTimeout(() => {
+            this.itemAdded = false;
+          }, 300);
+        }
+        this.lastLen = this.cartItems.length;
+      });
+      this.dataService.loadedFromStorage$.subscribe((play) => {
+        if (play) {
+          setTimeout(() => {
+            this.dataService.playAudio();
+            this.dataService.loadedFromStorage.next(false);
+          });
+        }
+      });
+    }
   }
 
   openCart() {

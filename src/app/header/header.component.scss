@@ -48,6 +48,10 @@
             font-size: small;
             margin-left: 15px;
             color: rgba(#ffffff, 0.80);
+            &.muted {
+                opacity: 0.50;
+                cursor: none;
+            }
             a {
                 text-decoration: none;
                 color: rgba(#ffffff, 0.80);
